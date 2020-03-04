@@ -1,0 +1,30 @@
+<div class="container">
+    <h4>Search Form</h4>
+    <div class="form-group">
+        <input type="text" [(ngModel)]="query" class="form-control" name="search" >
+        &nbsp;
+    </div>
+</div>
+<div class="container" >
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products | filter : query">
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.category }}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+    
+</div>
